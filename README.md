@@ -1,4 +1,4 @@
-# From Semantics to Structure: Zero-Shot Relational Reasoning via Large Language Models
+# ZeroRel: Label-free Relational Reasoning via Graph-guided Large Language Models
 
 ---
 
