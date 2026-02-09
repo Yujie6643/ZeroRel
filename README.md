@@ -1,4 +1,4 @@
-# ZeroRel: Label-free Relational Reasoning via Graph-guided Large Language Models
+# ZeroRel: Relational Reasoning via Graph-guided Large Language Models
 
 ---
 
