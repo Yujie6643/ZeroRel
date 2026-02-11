@@ -3,12 +3,14 @@
 ---
 Codes for the paper titled "ZeroRel: Relational Reasoning via Graph-guided Large Language Models",
 submitted to the 32nd SIGKDD Conference on Knowledge Discovery and Data Mining, 2026 - Research Track.
+
+
+![Alt text](2.jpg)
 ---
 ## Abstract
 
 Relational databases (RDBs) play an essential role in real-world scenarios, such as e-commerce, social media, and industry. Recently, with the rapid development of Large Language Models (LLMs), using LLMs to exploit RDBs has become a significant trend. Plenty of works have been proposed to use natural language to describe RDBs or use graph neural networks (GNNs) to embed relations in RDBs before applying LLMs to them. Despite the achieved progress, existing works still suffer from inevitable weaknesses. For one thing, using natural language to describe RDBs not only causes excessive context length, but also leads to the loss of critical structural information. For another, using GNNs to capture complex structural dependencies requires extensive human-labeled data for supervised fine-tuning, limiting their scalability.  Therefore, one important question remains unsolved: "How to leverage the capability of LLMs to realize robust relational reasoning in RDBs?'' In response, we propose a novel self-supervised framework (ZeroRel) for relational reasoning over RDBs. ZeroRel treats context sparsity as a controllable curriculum variable and leverages it to induce a progressive shift from semantic-dominant inference to structure-aware relational reasoning. Specifically, ZeroRel contains two key modules: Graph-guided Prompt Alignment (GrPA) and Progressive Sparsity-based Context Refinement (PSCR). GrPA uses a heterogeneous GNN to encode multi-table relational structures and projects the resulting structural embeddings into the semantic space of LLMs. PSCR gradually reduces visible attribute context and acts as an information bottleneck, forcing the model to internalize cross-table dependencies rather than relying on superficial semantic shortcuts. Finally, extensive experiments over 7 datasets and 12 downstream tasks demonstrate the superiority of ZeroRel. Furthermore, ZeroRel trained without any task-specific labels achieves an average improvement of 6.24% over models trained with supervised labels. 
 
-![Alt text](2.jpg)
 
 
 ## 📦 Installation
