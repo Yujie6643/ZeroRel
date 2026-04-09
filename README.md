@@ -49,13 +49,13 @@ conda activate llm
 
 ## Don’t pin pyg-lib / torch-scatter / torch-sparse / torch-cluster / torch-spline-conv in YAML. 
 pip install pyg-lib torch-scatter torch-sparse torch-cluster torch-spline-conv \
-  -f https://data.pyg.org/whl/torch-2.4.1+cu121.html
+  -f https://data.pyg.org/whl/torch-2.8.0+cu128.html
 ```
 
 Alternatively, manually install packages in turn:
 ```bash
 conda create -n RDL python=3.11 && conda activate RDL
-pip install torch==2.5.0 torchvision==0.20.0 torchaudio==2.5.0 --index-url https://download.pytorch.org/whl/cu124
+pip install torch==2.8.0  --index-url https://download.pytorch.org/whl/cu124
 pip install wandb pandas pillow pyarrow pooch
 pip install relbench
 pip install torch-frame 
