@@ -71,20 +71,29 @@ pip install pytorch_frame[full]
 
 Here, `Llama-3.1` is leveraged. Please log in to Huggingface for downloading the model weights directly. 
 
+## 🗞️ Examples
 
+### rel-avito (user-clicks)
 
+```bash
+python main.py  --dataset_source=rel-avito --task_source=user-clicks --pretrain --lr=0.001 --dropout=0.4  --text_embedder=mpnet  --loss_class_weight 0.8 0.2 --debug  
+```
 
 ## 📚 Datasets
 
-Rel-LLM supports all 7 datasets and 30 tasks from [RelBench](https://relbench.stanford.edu):
+ZeroRel is evaluated on **7 real-world relational datasets** from [RelBench](https://relbench.stanford.edu).
 
-- 🏟 `rel-event`: Social event participation and churn
-- 🛍 `rel-amazon`: E-commerce user behavior and item lifespan
-- 💬 `rel-stack`: QA forum engagement and reputation prediction
-- 🧾 `rel-avito`: Ad visits and clickthrough prediction
-- 🏎 `rel-f1`: Racing analytics for drivers and outcomes
-- 🛒 `rel-hm`: H&M fashion sales forecasting
-- 🧪 `rel-trial`: Clinical trial success and adverse outcomes
+These datasets span a wide range of multi-table relational scenarios, including user behavior modeling, event participation, advertising, e-commerce, question answering communities, retail forecasting, motorsport analytics, and clinical trial prediction.
+
+- 🏟 **`rel-event`**: social event participation, repeat attendance, and user churn prediction  
+- 🛍 **`rel-amazon`**: e-commerce user behavior, product interaction, and item lifespan prediction  
+- 💬 **`rel-stack`**: question-answering community engagement, reputation, and badge-related prediction  
+- 🧾 **`rel-avito`**: advertisement visits, user clicks, and click-through behavior prediction  
+- 🏎 **`rel-f1`**: Formula 1 racing analytics, including driver performance and race outcome prediction  
+- 🛒 **`rel-hm`**: retail transaction modeling and H\&M sales forecasting  
+- 🧪 **`rel-trial`**: clinical trial outcome and adverse event prediction  
+
+Please refer to the official RelBench benchmark for detailed dataset construction, schema information, and task definitions.
 
 
 
