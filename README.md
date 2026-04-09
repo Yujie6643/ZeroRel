@@ -54,7 +54,7 @@ pip install pyg-lib torch-scatter torch-sparse torch-cluster torch-spline-conv \
 
 Alternatively, manually install packages in turn:
 ```bash
-conda create -n RDL python=3.11 && conda activate RDL
+conda create -n ZeroRel python=3.11 && conda activate ZeroRel
 pip install torch==2.8.0  --index-url https://download.pytorch.org/whl/cu124
 pip install wandb pandas pillow pyarrow pooch
 pip install relbench
