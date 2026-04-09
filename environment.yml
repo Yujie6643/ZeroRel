@@ -1,4 +1,4 @@
-name: llm
+name: ZeroRel
 channels:
   - conda-forge
   - defaults
@@ -260,4 +260,4 @@ dependencies:
       - typing-extensions==4.15.0
       - typing-inspection==0.4.2
       - wandb==0.23.0
-prefix: /home/tyj/.conda/envs/llm
+prefix: /home/.conda/envs/ZeroRel
