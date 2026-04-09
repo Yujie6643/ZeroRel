@@ -1,15 +1,42 @@
 # ZeroRel: Relational Reasoning via Graph-guided Large Language Models
 
+This repository contains the code for the paper **"ZeroRel: Relational Reasoning via Graph-guided Large Language Models"**, submitted to the **32nd SIGKDD Conference on Knowledge Discovery and Data Mining (KDD 2026), Research Track**.
+
+<p align="center">
+  <img src="2.jpg" alt="RelZero Framework" width="90%">
+</p>
+
 ---
-Codes for the paper titled "ZeroRel: Relational Reasoning via Graph-guided Large Language Models",
-submitted to the 32nd SIGKDD Conference on Knowledge Discovery and Data Mining, 2026 - Research Track.
 
+## Overview
 
-![Alt text](2.jpg)
+Relational databases (RDBs) are essential in many real-world applications, including e-commerce, social media, healthcare, and industrial systems. With the rapid progress of large language models (LLMs), leveraging LLMs for reasoning over relational data has become an increasingly important research direction.
+
+However, existing approaches still face two major limitations:
+
+1. **Text-based serialization of RDBs** often leads to excessive context length and loss of structural information.
+2. **Graph-based relational modeling** usually depends on supervised learning with large amounts of task-specific labels, which limits scalability.
+
+To address these issues, we propose **RelZero**, a **self-supervised** framework for relational reasoning over RDBs. RelZero treats context sparsity as a controllable curriculum variable and uses it to drive a progressive transition from **semantic-dominant inference** to **structure-aware relational reasoning**.
+
+Our framework consists of two key modules:
+
+- **Graph-guided Prompt Alignment (GrPA)**: encodes multi-table relational structures with a heterogeneous GNN and projects the resulting structural representations into the semantic space of LLMs.
+- **Progressive Sparsity-based Context Refinement (PSCR)**: gradually reduces visible attribute context and acts as an information bottleneck, encouraging the model to internalize cross-table dependencies instead of relying on superficial semantic shortcuts.
+
+Extensive experiments on **7 datasets and 12 downstream tasks** demonstrate the effectiveness of RelZero. Notably, **RelZero trained without any task-specific labels achieves an average improvement of 6.24% over models trained with supervised labels**.
+
 ---
-## Abstract
 
-Relational databases (RDBs) play an essential role in real-world scenarios, such as e-commerce, social media, and industry. Recently, with the rapid development of Large Language Models (LLMs), using LLMs to exploit RDBs has become a significant trend. Plenty of works have been proposed to use natural language to describe RDBs or use graph neural networks (GNNs) to embed relations in RDBs before applying LLMs to them. Despite the achieved progress, existing works still suffer from inevitable weaknesses. For one thing, using natural language to describe RDBs not only causes excessive context length, but also leads to the loss of critical structural information. For another, using GNNs to capture complex structural dependencies requires extensive human-labeled data for supervised fine-tuning, limiting their scalability.  Therefore, one important question remains unsolved: "How to leverage the capability of LLMs to realize robust relational reasoning in RDBs?'' In response, we propose a novel self-supervised framework (ZeroRel) for relational reasoning over RDBs. ZeroRel treats context sparsity as a controllable curriculum variable and leverages it to induce a progressive shift from semantic-dominant inference to structure-aware relational reasoning. Specifically, ZeroRel contains two key modules: Graph-guided Prompt Alignment (GrPA) and Progressive Sparsity-based Context Refinement (PSCR). GrPA uses a heterogeneous GNN to encode multi-table relational structures and projects the resulting structural embeddings into the semantic space of LLMs. PSCR gradually reduces visible attribute context and acts as an information bottleneck, forcing the model to internalize cross-table dependencies rather than relying on superficial semantic shortcuts. Finally, extensive experiments over 7 datasets and 12 downstream tasks demonstrate the superiority of ZeroRel. Furthermore, ZeroRel trained without any task-specific labels achieves an average improvement of 6.24% over models trained with supervised labels. 
+## Key Features
+
+- **Label-free relational reasoning** through self-supervised learning
+- **Graph-guided structural prompting** for multi-table databases
+- **Progressive sparsity curriculum** to encourage robust relational inference
+- **Compatible with RelBench** benchmarks for relational learning
+- **LLM-based framework** that bridges structural modeling and semantic reasoning
+
+---
 
 
 
