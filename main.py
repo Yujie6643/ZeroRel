@@ -520,15 +520,9 @@ if __name__ == '__main__':
         return data_hetero, has_node_time
 
 
-   
-
-
-
-
     def is_continuous_float(series, tol=1e-6):
 
         if pd.api.types.is_float_dtype(series):
-            # 全是整数 -> 非连续列
             return not ((series.dropna() % 1).abs() < tol).all()
         return False
 
@@ -947,7 +941,7 @@ if __name__ == '__main__':
                     print("🛑 Early stopping triggered!")
                     break
 
-        # ===== 恢复最佳参数 =====
+
         if 'best_state' in locals():
             model_tgt.load_state_dict(best_state)
             print(f"✅ Restored best TTA model from epoch {best_epoch} (metric={best_metric:.4f})")
