@@ -45,7 +45,7 @@ Extensive experiments on **7 datasets and 12 downstream tasks** demonstrate the 
 Install dependencies at once:
 ```bash
 conda env create -f environment.yml
-conda activate llm 
+conda activate ZeroRel
 
 ## Don’t pin pyg-lib / torch-scatter / torch-sparse / torch-cluster / torch-spline-conv in YAML. 
 pip install pyg-lib torch-scatter torch-sparse torch-cluster torch-spline-conv \
