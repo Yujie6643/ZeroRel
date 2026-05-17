@@ -1,6 +1,6 @@
 # ZeroRel: Relational Reasoning via Graph-guided Large Language Models
 
-This repository contains the code for the paper **"ZeroRel: Relational Reasoning via Graph-guided Large Language Models"**, submitted to the **32nd SIGKDD Conference on Knowledge Discovery and Data Mining (KDD 2026), Research Track**.
+This repository contains the code for the paper **"ZeroRel: Relational Reasoning via Graph-guided Large Language Models"**.
 
 <p align="center">
   <img src="2.jpg" alt="RelZero Framework" width="90%">
