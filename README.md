@@ -79,6 +79,15 @@ Here, `Llama-3.1` is leveraged. Please log in to Huggingface for downloading the
 python main.py  --dataset_source=rel-avito --task_source=user-clicks --pretrain --lr=0.001 --dropout=0.4  --text_embedder=mpnet  --loss_class_weight 0.8 0.2 --debug  
 ```
 
+To facilitate quick reproduction, we provide the trained model checkpoint.
+The checkpoint can be downloaded from: xxxxx（某网盘链接）
+
+After downloading the checkpoint, you can directly run testing with:
+
+```bash
+python main.py  --dataset_source=rel-avito --task_source=user-clicks --testing  --best_model_path=source_best_model_clicks.pt
+```
+
 ## 📚 Datasets
 
 ZeroRel is evaluated on **7 real-world relational datasets** from [RelBench](https://relbench.stanford.edu).
