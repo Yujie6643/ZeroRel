@@ -80,7 +80,7 @@ python main.py  --dataset_source=rel-avito --task_source=user-clicks --pretrain 
 ```
 
 To facilitate quick reproduction, we provide the trained model checkpoint.
-The checkpoint can be downloaded from: [10.5281/zenodo.20248764](https://zenodo.org/uploads/20251716)
+The checkpoint can be downloaded from: [checkpoints](https://zenodo.org/records/20251716)
 
 After downloading the checkpoint, you can directly run testing with:
 
