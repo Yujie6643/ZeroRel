@@ -76,7 +76,7 @@ Here, `Llama-3.1` is leveraged. Please log in to Huggingface for downloading the
 ### rel-avito (user-clicks)
 
 ```bash
-python main.py  --dataset_source=rel-avito --task_source=user-clicks --pretrain --lr=0.001 --dropout=0.4  --text_embedder=mpnet  --loss_class_weight 0.8 0.2 --debug  
+CUDA_VISIBLE_DEVICES=0,1 torchrun --standalone --nproc_per_node=2 main.py   --dataset_source=rel-avito   --task_source=user-clicks --pretrain   --lr=0.001   --dropout=0.4   --text_embedder=mpnet   --loss_class_weight 0.8 0.2   --debug  
 ```
 
 To facilitate quick reproduction, we publicly release the trained checkpoints for all tasks across the three datasets. The checkpoints can be downloaded from:  [10.5281/zenodo.20251716](https://zenodo.org/records/20251716)
