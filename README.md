@@ -38,47 +38,6 @@ Extensive experiments on **7 datasets and 12 downstream tasks** demonstrate the 
 
 ---
 
-
-
-## 📦 Installation
-
-Install dependencies at once:
-```bash
-conda env create -f environment.yml
-conda activate ZeroRel
-
-## Don’t pin pyg-lib / torch-scatter / torch-sparse / torch-cluster / torch-spline-conv in YAML. 
-pip install pyg-lib torch-scatter torch-sparse torch-cluster torch-spline-conv \
-  -f https://data.pyg.org/whl/torch-2.8.0+cu128.html
-```
-
-Alternatively, manually install packages in turn:
-```bash
-conda create -n ZeroRel python=3.11 && conda activate ZeroRel
-pip install torch==2.8.0  --index-url https://download.pytorch.org/whl/cu124
-pip install wandb pandas pillow pyarrow pooch
-pip install relbench
-pip install torch-frame 
-pip install -U sentence-transformers   # for Glove 
-pip install transformers peft
-```
-
-To enable modeling features via RelBench:
-```bash
-pip install relbench[full]
-pip install pytorch_frame[full]  
-```
-
-Here, `Llama-3.1` is leveraged. Please log in to Huggingface for downloading the model weights directly. 
-
-## 🗞️ Examples
-
-### rel-avito (user-clicks)
-
-```bash
-CUDA_VISIBLE_DEVICES=0,1 torchrun --standalone --nproc_per_node=2 main.py   --dataset_source=rel-avito   --task_source=user-clicks --pretrain   --lr=0.001   --dropout=0.4   --text_embedder=mpnet   --loss_class_weight 0.8 0.2   --debug  
-```
-
 To facilitate quick reproduction, we publicly release the trained checkpoints for all tasks across the three datasets. The checkpoints can be downloaded from:  [10.5281/zenodo.20251716](https://zenodo.org/records/20251716)
 
 After downloading the checkpoints, you can directly run testing with:
@@ -87,21 +46,6 @@ After downloading the checkpoints, you can directly run testing with:
 python main.py  --dataset_source=rel-avito --task_source=user-clicks --testing  --best_model_path=source_best_model_clicks.pt
 ```
 
-## 📚 Datasets
-
-ZeroRel is evaluated on **7 real-world relational datasets** from [RelBench](https://relbench.stanford.edu).
-
-These datasets span a wide range of multi-table relational scenarios, including user behavior modeling, event participation, advertising, e-commerce, question answering communities, retail forecasting, motorsport analytics, and clinical trial prediction.
-
-- 🏟 **`rel-event`**: social event participation, repeat attendance, and user churn prediction  
-- 🛍 **`rel-amazon`**: e-commerce user behavior, product interaction, and item lifespan prediction  
-- 💬 **`rel-stack`**: question-answering community engagement, reputation, and badge-related prediction  
-- 🧾 **`rel-avito`**: advertisement visits, user clicks, and click-through behavior prediction  
-- 🏎 **`rel-f1`**: Formula 1 racing analytics, including driver performance and race outcome prediction  
-- 🛒 **`rel-hm`**: retail transaction modeling and H\&M sales forecasting  
-- 🧪 **`rel-trial`**: clinical trial outcome and adverse event prediction  
-
-Please refer to the official RelBench benchmark for detailed dataset construction, schema information, and task definitions.
 
 
 
